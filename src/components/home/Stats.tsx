@@ -1,0 +1,3 @@
+import { useCounter } from '../../hooks/useCounter';
+function Stat({value,suffix,label}:{value:number;suffix:string;label:string}){const n=useCounter(value);return <div className="reveal neon-card rounded-3xl p-6 text-center"><div className="font-price text-4xl text-yellow-300">{n}{suffix}</div><p className="mt-2 text-slate-300">{label}</p></div>}
+export function Stats(){return <section className="mx-auto grid max-w-7xl gap-4 px-4 py-16 sm:grid-cols-2 lg:grid-cols-4"><Stat value={500} suffix="+" label="Figuras Entregues"/><Stat value={150} suffix="+" label="Projetos Personalizados"/><Stat value={98} suffix="%" label="Clientes Satisfeitos"/><Stat value={5} suffix=" Anos" label="Experiência"/></section>}

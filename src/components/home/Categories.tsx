@@ -1,0 +1,4 @@
+import { Bot, Box, Castle, Gem, type LucideIcon } from 'lucide-react';
+import { Card } from '../ui/card';
+const cats:[string,LucideIcon,string][]=[['Action Figures',Bot,'#FF4DB8'],['Bustos',Gem,'#A855F7'],['Miniaturas',Box,'#22D3EE'],['Dioramas',Castle,'#FACC15']];
+export function Categories(){return <section className="mx-auto max-w-7xl px-4 py-20"><h2 className="reveal mb-10 text-5xl">Categorias <span className="highlight-text">colecionáveis</span></h2><div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{cats.map(([name,Icon,color])=><Card key={name} className="reveal group overflow-hidden transition hover:scale-105" style={{boxShadow:`0 0 24px ${color}22`}}><Icon className="mb-8 transition group-hover:translate-x-3 group-hover:-translate-y-3" color={color} size={48}/><h3>{name}</h3><p className="mt-2 text-slate-400">Modelos prontos ou personalizados com acabamento de vitrine.</p></Card>)}</div></section>}

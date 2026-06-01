@@ -1,0 +1,3 @@
+import { Link } from 'react-router-dom';
+import { Button } from '../ui/button';
+export function FinalCTA(){return <section className="px-4 py-20"><div className="reveal mx-auto max-w-7xl rounded-[2.5rem] bg-gradient-to-br from-purple-600 to-pink-500 p-10 text-center shadow-2xl shadow-pink-500/20 md:p-16"><h2 className="text-5xl md:text-6xl">Transforme seu personagem favorito em realidade.</h2><p className="mx-auto mt-4 max-w-2xl text-lg text-white/85">Do STL ao acabamento final, criamos peças que dominam qualquer prateleira.</p><Link to="/personalizacao"><Button className="mt-8 bg-white text-purple-700">Solicitar Projeto</Button></Link></div></section>}
