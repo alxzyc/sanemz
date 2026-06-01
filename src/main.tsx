@@ -1,20 +1,28 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { BrowserRouter } from 'react-router-dom';
+import { ErrorBoundary } from './components/error/ErrorBoundary';
 import AppRoutes from './routes/AppRoutes';
 import './styles/index.css';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 
 const queryClient = new QueryClient();
+const rootElement = document.getElementById('root');
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+if (!rootElement) {
+  throw new Error('Elemento #root não encontrado no index.html');
+}
+
+ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <AppRoutes />
-      </BrowserRouter>
-    </QueryClientProvider>
+    <ErrorBoundary>
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+          <AppRoutes />
+        </BrowserRouter>
+      </QueryClientProvider>
+    </ErrorBoundary>
   </React.StrictMode>,
 );
